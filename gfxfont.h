@@ -21,4 +21,17 @@ typedef struct { // Data stored for FONT AS A WHOLE:
 	uint8_t   yAdvance;    // Newline distance (y axis)
 } GFXfont;
 
+typedef struct {
+	uint16_t bitmapOffset;
+	uint8_t  width, height;
+	uint8_t  xAdvance;
+	int8_t   glyph;
+} GFXbitmapGlyph;
+
+typedef struct {
+	uint8_t  *bitmap;
+	GFXbitmapGlyph *glyphs;
+	uint8_t   glyphCount;
+} GFXbitmapFont;
+
 #endif // _GFXFONT_H_
